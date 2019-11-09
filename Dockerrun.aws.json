@@ -5,13 +5,15 @@
       "name": "api",
       "image": "jonathansgardner/multi-api",
       "hostname": "api",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "client",
       "image": "jonathansgardner/multi-client",
       "hostname": "client",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "nginx",
@@ -26,13 +28,15 @@
       "links": [
         "api",
         "client"
-      ]
+      ],
+      "memory": 128
     },
     {
       "name": "worker",
       "image": "jonathansgardner/multi-worker",
       "hostname": "worker",
-      "essential": false
+      "essential": false,
+      "memory": 128
     }
   ]
 }
