@@ -1,0 +1,38 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "api",
+      "image": "jonathansgardner/multi-api",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "client",
+      "image": "jonathansgardner/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "jonathansgardner/multi-nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "api",
+        "client"
+      ]
+    },
+    {
+      "name": "worker",
+      "image": "jonathansgardner/multi-worker",
+      "hostname": "worker",
+      "essential": false
+    }
+  ]
+}
