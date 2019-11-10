@@ -18,6 +18,7 @@
     {
       "name": "nginx",
       "image": "jonathansgardner/multi-nginx",
+      "hostname": "nginx",
       "essential": true,
       "portMappings": [
         {
@@ -25,10 +26,7 @@
           "containerPort": 80
         }
       ],
-      "links": [
-        "api",
-        "client"
-      ],
+      "links": ["api","client"],
       "memory": 128
     },
     {
