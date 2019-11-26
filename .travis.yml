@@ -23,14 +23,15 @@ after_success:
   - docker push jonathansgardner/multi-nginx
   - docker push jonathansgardner/multi-worker
 
-deploy:
-  provider: elasticbeanstalk
-  region: us-east-2
-  app: multi-docker
-  env: MultiDocker-env
-  bucket_name: elasticbeanstalk-us-east-2-630716638388
-  bucket_path: multi-docker
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+# follow steps in aws-setup.txt to configure amazon web services
+# deploy:
+#   provider: elasticbeanstalk
+#   region: us-east-2
+#   app: multi-docker
+#   env: MultiDocker-env
+#   bucket_name: elasticbeanstalk-us-east-2-630716638388
+#   bucket_path: multi-docker
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
