@@ -37,7 +37,7 @@ class Fib extends Component {
           <input value={ this.state.index } onChange={ e => this.setState({ index: e.target.value })} />&nbsp;
           <button>Submit</button>
         </form>
-        <p>Indexes I have Seen</p>
+        <p>Indexes I have seen:</p>
         { this.renderSeenIndexes() }
       </div>
     );
